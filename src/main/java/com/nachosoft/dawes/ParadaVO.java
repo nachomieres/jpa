@@ -25,11 +25,9 @@ public class ParadaVO {
 	private String denominacion;
 	private LocalDate fecha;
 	
-	// al eliminar una cuenta tiene que eliminar en cascada los registros de esa cuenta en la tabla intermedia
-	@OneToMany(mappedBy="parada",cascade=CascadeType.REMOVE)
+
+	@OneToMany(mappedBy="parada",cascade=CascadeType.PERSIST)
 	
-	// cuando se genere la tabla titularescuentas en MySql, tiene que tener una restricción de borrado en cascade
-	// para la clave ajena cuentas
 	
 	@OnDelete(action=OnDeleteAction.CASCADE)
 	List<LineaParadaVO> lineas;

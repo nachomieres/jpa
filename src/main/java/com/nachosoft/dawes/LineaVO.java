@@ -11,6 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 
 
 @Entity
@@ -24,7 +27,9 @@ public class LineaVO {
 	private LocalDate fecha;
 	
 	@OneToMany(mappedBy="linea", cascade= {CascadeType.PERSIST})
-//	@OnDelete(action=OnDeleteAction.CASCADE)
+	
+	@OnDelete(action=OnDeleteAction.CASCADE)
+	
 	List<LineaParadaVO> paradas;
 
 	public int getIdlineas() {
