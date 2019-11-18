@@ -1,4 +1,4 @@
-package com.nachosoft.dawes;
+package com.dawes.modelo;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -25,11 +25,7 @@ public class ParadaVO {
 	private String denominacion;
 	private LocalDate fecha;
 	
-
-	@OneToMany(mappedBy="parada",cascade=CascadeType.PERSIST)
-	
-	
-	@OnDelete(action=OnDeleteAction.CASCADE)
+	@OneToMany(mappedBy="parada")	
 	List<LineaParadaVO> lineas;
 	public int getIdparada() {
 		return idparada;
@@ -92,6 +88,12 @@ public class ParadaVO {
 		return "ParadaVO [idparada=" + idparada + ", denominacion=" + denominacion + ", fecha=" + fecha + "]";
 	}
 	
+	
+	
+	public ParadaVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public ParadaVO(String denominacion, LocalDate fecha, List<LineaParadaVO> lineas) {
 		super();
 		this.denominacion = denominacion;

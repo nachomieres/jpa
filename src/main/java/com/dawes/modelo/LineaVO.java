@@ -1,4 +1,4 @@
-package com.nachosoft.dawes;
+package com.dawes.modelo;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -26,10 +26,7 @@ public class LineaVO {
 	private String denlarga;
 	private LocalDate fecha;
 	
-	@OneToMany(mappedBy="linea", cascade= {CascadeType.PERSIST})
-	
-	@OnDelete(action=OnDeleteAction.CASCADE)
-	
+	@OneToMany(mappedBy="linea", cascade= {CascadeType.ALL})
 	List<LineaParadaVO> paradas;
 
 	public int getIdlineas() {

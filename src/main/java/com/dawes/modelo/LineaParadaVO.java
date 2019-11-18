@@ -1,4 +1,4 @@
-package com.nachosoft.dawes;
+package com.dawes.modelo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +19,7 @@ public class LineaParadaVO {
 	
 	@ManyToOne
 	@JoinColumn(name="idlinea")
-	private LineaVO linea;
-	
+	private LineaVO linea;	
 	@ManyToOne
 	@JoinColumn(name="idparada")
 	private ParadaVO parada;
